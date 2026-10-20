@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | NSS Chikkaballapura Trek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="register-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="NSS Club home"><img class="nss-logo" src="nss_logo.webp"
+        alt="National Service Scheme logo"></a>
+    <a class="back-link" href="index.html">← Back to trip details</a>
+  </header>
+  <main class="registration-layout">
+    <aside class="registration-aside">
+      <p class="eyebrow eyebrow-light"><span></span> NSS CLUB / ONE DAY</p>
+      <h1>Your next<br><em>adventure</em><br>starts here.</h1>
+      <p>Tell us a little about yourself and we’ll save your place on the bus.</p>
+      <div class="aside-bottom"><span>07 NOVEMBER</span><span>CHIKKABALLAPURA</span></div>
+    </aside>
+    <section class="registration-form-wrap">
+      <div class="form-header">
+        <p class="eyebrow"><span></span> STEP 01 / 01</p>
+        <h2>Reserve your spot</h2>
+        <p>All fields marked <b>*</b> are required.</p>
+      </div>
+      <form id="registration-form">
+        <div class="form-grid">
+          <label>Full name <b>*</b><input type="text" name="name" placeholder="NAME" required></label>
+          <label>Year of study <b>*</b><select name="year" required>
+              <option value="" disabled selected>Select year</option>
+              <option>First year</option>
+              <option>Second year</option>
+              <option>Third year</option>
+            </select></label>
+          <label>Section <b>*</b><select name="section" required>
+              <option value="" disabled selected>Select section</option>
+              <option>A</option>
+              <option>B</option>
+              <option>C</option>
+              <option>D</option>
+              <option>E</option>
+            </select></label>
+          <label>Course <b>*</b><select name="course" required>
+              <option value="" disabled selected>Select course</option>
+              <option>BCA</option>
+              <option>BBA</option>
+              <option>B.Com</option>
+              <option>BA</option>
+            </select></label>
+          <label>Registration number <b>*</b><input type="text" name="regno" placeholder="e.g. 24C0XYZ"
+              required></label>
+          <label>Mobile number <b>*</b><input type="tel" name="mobile" placeholder="92021 43210" required></label>
+          <label class="full-width">Emergency mobile number <b>*</b><input type="tel" name="emergencyMobile"
+              placeholder=" 93114 43210" required></label>
+        </div>
+        <fieldset class="payment-options">
+          <legend>Payment <b>*</b></legend>
+          <label class="payment-choice"><input type="radio" name="paymentMethod" value="Cash" required> Cash</label>
+          <label class="payment-choice"><input type="radio" name="paymentMethod" value="Online" required> Online</label>
+          <p class="payment-amount">Registration fee: <strong>₹390</strong></p>
+          <div class="cash-message" id="cash-message" hidden>Cash payment selected. Your registration will be confirmed after the NSS team receives and verifies your payment.</div>
+          <div class="online-payment" id="online-payment" hidden>
+            <div class="scanner-frame"><img src="qrr.jpeg" alt="Scan this QR code to pay the registration fee"></div>
+            <p>Scan to pay ₹390 using any UPI app.</p>
+            <p>UPI ID: <strong>sridharsuji2015@oksbi</strong></p>
+            <label>Upload payment screenshot <b>*</b><input id="payment-proof" type="file" name="paymentProof" accept="image/*"></label>
+          </div>
+        </fieldset>
+        <details class="trip-guidelines" id="trip-guidelines">
+          <summary>Open trip guidelines before registering</summary>
+          <p>Carry comfortable walking shoes, water, personal medication, and a valid college ID. Follow the NSS team’s
+            instructions, stay with the group, and help keep every location clean.</p>
+        </details>
+        <label class="check-label"><input id="guidelines-accepted" type="checkbox" required disabled><span>I have read
+            the trip guidelines and agree to follow the instructions of the NSS team. <b>*</b></span></label>
+        <button class="button button-primary submit-button" type="submit" disabled>Complete registration
+          <span>↗</span></button>
+      </form>
+      <div class="success-message" id="success-message" hidden>
+        <div class="success-icon">✓</div>
+        <p class="eyebrow"><span></span> YOU’RE ON THE LIST</p>
+        <h2>See you,<br><em id="success-name">on the trail.</em></h2>
+        <p>Your registration is recorded as <strong id="success-number">Registration #—</strong> and is pending payment verification. The NSS team will confirm your place after checking the payment.</p><a
+          class="text-link" href="index.html">Return to trip details <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
