@@ -69,23 +69,17 @@
           <p class="payment-amount">Registration fee: <strong>₹400</strong></p>
           <div class="cash-message" id="cash-message" hidden>Cash payment selected. Your registration will be confirmed after the NSS team receives and verifies your payment.</div>
           <div class="online-payment" id="online-payment" hidden>
-            <p>Scan either QR code or tap a UPI ID to pay ₹400 using PhonePe, Google Pay, or any other UPI app.</p>
+            <p>Scan either QR code or copy a UPI ID below, then paste it into PhonePe, Google Pay, or any other UPI app to pay ₹400.</p>
             <div class="payment-accounts">
               <div class="payment-account">
                 <div class="scanner-frame"><img class="first-qr" src="qrr.jpeg" alt="QR code for sridharvw20@ybl"></div>
                 <p>UPI ID: <strong>sridharvw20@ybl</strong></p>
-                <div class="payment-links">
-                  <a class="upi-link" href="gpay://upi/pay?pa=sridharvw20%40ybl&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR">Google Pay</a>
-                  <a class="upi-link" href="phonepe://pay?pa=sridharvw20%40ybl&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR">PhonePe</a>
-                </div>
+                <button class="upi-link copy-upi" type="button" data-upi="sridharvw20@ybl">Copy UPI ID</button>
               </div>
               <div class="payment-account">
                 <div class="scanner-frame"><img src="nayan2.jpeg" alt="QR code for nayan.vananjakar@okicici"></div>
                 <p>UPI ID: <strong>nayan.vananjakar@okicici</strong></p>
-                <div class="payment-links">
-                  <a class="upi-link" href="gpay://upi/pay?pa=nayan.vananjakar%40okicici&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR">Google Pay</a>
-                  <a class="upi-link" href="phonepe://pay?pa=nayan.vananjakar%40okicici&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR">PhonePe</a>
-                </div>
+                <button class="upi-link copy-upi" type="button" data-upi="nayan.vananjakar@okicici">Copy UPI ID</button>
               </div>
             </div>
             <label>Upload payment screenshot <b>*</b><input id="payment-proof" type="file" name="paymentProof" accept="image/*"></label>

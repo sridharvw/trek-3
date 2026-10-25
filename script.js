@@ -11,6 +11,50 @@ const paymentProof = document.querySelector("#payment-proof");
 const guidelines = document.querySelector("#trip-guidelines");
 const guidelinesAccepted = document.querySelector("#guidelines-accepted");
 const submitButton = form?.querySelector(".submit-button");
+const copyUpiButtons = document.querySelectorAll(".copy-upi");
+
+async function copyUpiId(button) {
+  const upiId = button.dataset.upi;
+
+  if (!upiId) {
+    window.alert("UPI ID is not available.");
+    return;
+  }
+
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(upiId);
+    } else {
+      const copyField = document.createElement("textarea");
+      copyField.value = upiId;
+      copyField.setAttribute("readonly", "");
+      copyField.style.position = "fixed";
+      copyField.style.opacity = "0";
+      document.body.appendChild(copyField);
+      copyField.select();
+      const copied = document.execCommand("copy");
+      copyField.remove();
+
+      if (!copied) {
+        throw new Error("UPI ID could not be copied.");
+      }
+    }
+
+    const originalText = button.textContent;
+    button.textContent = "UPI ID copied";
+    window.setTimeout(() => {
+      button.textContent = originalText;
+    }, 1800);
+  } catch (error) {
+    window.alert(error instanceof Error ? error.message : "UPI ID could not be copied.");
+  }
+}
+
+copyUpiButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    copyUpiId(button);
+  });
+});
 
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
