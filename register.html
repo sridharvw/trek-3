@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register | NSS Chikkaballapura Trek</title>
+  <title>Register | Madhugiri Betta Trek</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -24,7 +24,7 @@
       <p class="eyebrow eyebrow-light"><span></span> NSS CLUB / ONE DAY</p>
       <h1>Your next<br><em>adventure</em><br>starts here.</h1>
       <p>Tell us a little about yourself and we’ll save your place on the bus.</p>
-      <div class="aside-bottom"><span>07 NOVEMBER</span><span>CHIKKABALLAPURA</span></div>
+      <div class="aside-bottom"><span>07 NOVEMBER</span><span>MADHUGIRI BETTA</span></div>
     </aside>
     <section class="registration-form-wrap">
       <div class="form-header">
@@ -66,19 +66,46 @@
           <legend>Payment <b>*</b></legend>
           <label class="payment-choice"><input type="radio" name="paymentMethod" value="Cash" required> Cash</label>
           <label class="payment-choice"><input type="radio" name="paymentMethod" value="Online" required> Online</label>
-          <p class="payment-amount">Registration fee: <strong>₹390</strong></p>
+          <p class="payment-amount">Registration fee: <strong>₹400</strong></p>
           <div class="cash-message" id="cash-message" hidden>Cash payment selected. Your registration will be confirmed after the NSS team receives and verifies your payment.</div>
           <div class="online-payment" id="online-payment" hidden>
-            <div class="scanner-frame"><img src="qrr.jpeg" alt="Scan this QR code to pay the registration fee"></div>
-            <p>Scan to pay ₹390 using any UPI app.</p>
-            <p>UPI ID: <strong>sridharsuji2015@oksbi</strong></p>
+            <p>Scan either QR code or tap a UPI ID to pay ₹400 using PhonePe, Google Pay, or any other UPI app.</p>
+            <div class="payment-accounts">
+              <div class="payment-account">
+                <div class="scanner-frame"><img class="first-qr" src="qrr.jpeg" alt="QR code for sridharvw20@ybl"></div>
+                <p>UPI ID: <a class="upi-link" href="upi://pay?pa=sridharvw20%40ybl&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR">sridharvw20@ybl</a></p>
+              </div>
+              <div class="payment-account">
+                <div class="scanner-frame"><img src="qrr2.jpeg" alt="QR code for nayan.vananjakar@okicici"></div>
+                <p>UPI ID: <a class="upi-link" href="upi://pay?pa=nayan.vananjakar%40okicici&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR">nayan.vananjakar@okicici</a></p>
+              </div>
+            </div>
             <label>Upload payment screenshot <b>*</b><input id="payment-proof" type="file" name="paymentProof" accept="image/*"></label>
           </div>
+          <p class="food-notice"><strong>Food arrangements are the responsibility of each participant.</strong> We
+            will stop at hotels, where meals can be purchased at the participant’s own cost.</p>
         </fieldset>
         <details class="trip-guidelines" id="trip-guidelines">
           <summary>Open trip guidelines before registering</summary>
-          <p>Carry comfortable walking shoes, water, personal medication, and a valid college ID. Follow the NSS team’s
-            instructions, stay with the group, and help keep every location clean.</p>
+          <ul>
+            <li>Madhugiri Betta has steep stone steps, rocky slopes, and exposed sections.</li>
+            <li><strong>Wear shoes with strong grip.</strong></li>
+            <li><strong>Carry water bottles</strong>, personal medication, snacks, sun protection, hat/cap, and a valid college
+              ID.</li>
+            <li><strong>Do not climb wet rocks.</strong></li>
+            <li><strong>Stay with the NSS team and follow instructions.</strong></li>
+            <li>Help keep the fort and trail clean.</li>
+          </ul>
+          <div class="trip-notes">
+            <p><strong>Important notes:</strong></p>
+            <ul>
+              <li>Participation is voluntary and at your own risk.</li>
+              <li>Participants are responsible for their own health, belongings, and personal safety during the trip.</li>
+              <li>The NSS team and organizers are not responsible for injuries, illness, loss, or damage resulting
+                from failure to follow the guidelines or from the natural risks of the trek.</li>
+              <li>Inform the NSS team in advance about any medical condition, allergy, or medication requirement.</li>
+            </ul>
+          </div>
         </details>
         <label class="check-label"><input id="guidelines-accepted" type="checkbox" required disabled><span>I have read
             the trip guidelines and agree to follow the instructions of the NSS team. <b>*</b></span></label>

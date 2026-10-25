@@ -78,7 +78,7 @@ if (form && successMessage) {
       formData.set("paymentProofName", proof instanceof File ? proof.name : "");
       formData.set("paymentProofData", proofData);
       formData.set("paymentProofType", proof instanceof File && proof.type ? proof.type : "");
-      formData.set("paymentAmount", "390");
+      formData.set("paymentAmount", "400");
 
       const response = await fetch(GOOGLE_SHEETS_ENDPOINT, {
         method: "POST",
@@ -115,5 +115,21 @@ if (menuToggle && navigation) {
   menuToggle.addEventListener("click", () => {
     const isOpen = navigation.classList.toggle("is-open");
     menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+}
+
+const welcomeGuide = document.querySelector("#welcome-guide");
+const welcomeGuideClose = welcomeGuide?.querySelector(".welcome-guide-close");
+
+if (welcomeGuide && welcomeGuideClose && !localStorage.getItem("nssTrekWelcomeSeen")) {
+  welcomeGuide.showModal();
+
+  welcomeGuideClose.addEventListener("click", () => {
+    localStorage.setItem("nssTrekWelcomeSeen", "true");
+    welcomeGuide.close();
+  });
+
+  welcomeGuide.addEventListener("cancel", () => {
+    localStorage.setItem("nssTrekWelcomeSeen", "true");
   });
 }

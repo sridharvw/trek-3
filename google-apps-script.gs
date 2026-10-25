@@ -7,14 +7,29 @@ function doGet() {
 
 function doPost(event) {
   const lock = LockService.getScriptLock();
-  lock.waitLock(30000);
+  let lockAcquired = false;
 
   try {
+    lock.waitLock(30000);
+    lockAcquired = true;
+
+    if (!event || !event.postData || !event.postData.contents) {
+      return jsonResponse({ success: false, message: "Registration data is missing." });
+    }
+
     const data = JSON.parse(event.postData.contents);
     const mobile = normalizeMobile(data.mobile);
 
-    if (!mobile) {
-      return jsonResponse({ success: false, message: "Mobile number is required." });
+    if (mobile.length !== 10) {
+      return jsonResponse({ success: false, message: "Enter a valid 10-digit mobile number." });
+    }
+
+    if (data.paymentMethod !== "Cash" && data.paymentMethod !== "Online") {
+      return jsonResponse({ success: false, message: "Select a valid payment method." });
+    }
+
+    if (data.paymentMethod === "Online" && (!data.paymentProofData || !data.paymentProofName)) {
+      return jsonResponse({ success: false, message: "Upload the online payment screenshot." });
     }
 
     const sheet = getSheet();
@@ -37,7 +52,7 @@ function doPost(event) {
       mobile,
       data.emergencyMobile || "",
       data.paymentMethod || "",
-      data.paymentAmount || "390",
+      "400",
       "Pending verification",
       proofUrl
     ]);
@@ -47,8 +62,15 @@ function doPost(event) {
       name: data.name || "there",
       registrationNumber: registrationNumber
     });
+  } catch (error) {
+    return jsonResponse({
+      success: false,
+      message: "Registration could not be saved: " + error.message
+    });
   } finally {
-    lock.releaseLock();
+    if (lockAcquired) {
+      lock.releaseLock();
+    }
   }
 }
 

@@ -207,6 +207,72 @@ em {
     color: #13241e
 }
 
+.welcome-guide {
+    width: min(560px, calc(100% - 32px));
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--cream);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .45)
+}
+
+.welcome-guide::backdrop {
+    background: rgba(7, 15, 12, .72);
+    backdrop-filter: blur(4px)
+}
+
+.welcome-guide-content {
+    padding: 36px
+}
+
+.welcome-guide h2 {
+    margin: 10px 0 24px;
+    font-size: clamp(34px, 6vw, 54px)
+}
+
+.welcome-guide ol {
+    margin: 0;
+    padding-left: 24px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65
+}
+
+.welcome-guide li {
+    padding-left: 7px;
+    margin-bottom: 8px
+}
+
+.welcome-guide strong {
+    color: var(--cream)
+}
+
+.welcome-guide-note {
+    margin: 20px 0 24px;
+    color: var(--mint);
+    font-size: 13px
+}
+
+.welcome-guide-thanks {
+    margin: 0 0 24px;
+    color: var(--gold);
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    line-height: 1.5
+}
+
+.welcome-guide-thanks span {
+    color: var(--muted);
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px
+}
+
+.welcome-guide-close {
+    width: 100%;
+    justify-content: center
+}
+
 .text-link {
     font-size: 11px;
     font-weight: 700;
@@ -230,7 +296,7 @@ em {
 
 .hero-image {
     height: 100%;
-    background: linear-gradient(125deg, rgba(13, 49, 38, .45), rgba(13, 65, 47, .05)), url("pexels-suhashanjar-34271586.jpg") center/cover;
+    background: linear-gradient(125deg, rgba(13, 49, 38, .45), rgba(13, 65, 47, .05)), url("kMl_ihs1fbZ3I3Nux2MXdcy9mcnY4hZsefY8jQCHSdnbv0z-Bdd69QMOXIUyVgeBdfE7__CKq7n31Y-1jxkw53X43QeflDYEUKmFAoKUv0h8RXEk-XxOM1gBhjfE-S6aUcoSDmQ0IroZH0jrPuyhu3qWNr5YmOC7homaU9htjnY.jpg") center/cover;
     border-radius: 180px 180px 6px 6px;
     box-shadow: var(--shadow);
     filter: saturate(.8)
@@ -332,9 +398,9 @@ em {
 
 .destination-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 34px;
-    max-width: 980px;
+    max-width: 700px;
     margin: 0 auto
 }
 
@@ -377,7 +443,7 @@ em {
 }
 
 .photo-one {
-    background-image: linear-gradient(0deg, rgba(12, 50, 39, .2), transparent), url("Avalabetta.jpg")
+    background-image: linear-gradient(0deg, rgba(12, 50, 39, .2), transparent), url("PjIcWy-kFp2VyKe7miOa6AfQ8YUg49d0cmJ9pnVLsZKkY8_qrQwzHJOMPymDwa_aBqwWOQXO0M6-JitwSBsB3BceygvMEM3g59KOpp5N2eyN0zJNMgDw-HdEJPrQ7Pr-JsTY46K7qjPjyukGelXh_-EZdT5kd7Gq87HgUSSbndeESIbqqcUEt0m--tdH0ML7.jpg")
 }
 
 .photo-two {
@@ -657,6 +723,19 @@ textarea:focus {
     font-weight: 400
 }
 
+.food-notice {
+    margin: 18px 0 0;
+    padding: 12px 14px;
+    border-left: 2px solid var(--gold);
+    background: rgba(0, 0, 0, .12);
+    color: var(--muted);
+    font-size: 13px
+}
+
+.food-notice strong {
+    color: var(--cream)
+}
+
 .check-label input {
     width: 16px;
     height: 16px;
@@ -692,11 +771,35 @@ textarea:focus {
     text-transform: uppercase
 }
 
-.trip-guidelines p {
+.trip-guidelines ul {
     margin: 0;
-    padding: 0 17px 17px;
+    padding: 0 17px 17px 35px;
     color: var(--muted);
     font-size: 13px
+}
+
+.trip-guidelines strong {
+    color: var(--cream)
+}
+
+.trip-notes {
+    margin: 0 17px 17px;
+    padding: 13px 14px 1px;
+    border-left: 2px solid var(--gold);
+    background: rgba(0, 0, 0, .12)
+}
+
+.trip-notes p {
+    margin: 0 0 8px;
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.trip-notes ul {
+    padding: 0 0 12px 18px;
+    font-size: 12px
 }
 
 .check-label input:disabled {
@@ -767,8 +870,20 @@ textarea:focus {
     font-size: 13px
 }
 
+.payment-accounts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 14px
+}
+
+.payment-account {
+    min-width: 0;
+    text-align: center
+}
+
 .scanner-frame {
-    width: min(220px, 100%);
+    width: min(280px, 100%);
     aspect-ratio: 1;
     overflow: hidden;
     margin: 0 auto 14px;
@@ -781,7 +896,23 @@ textarea:focus {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    transform: scale(1.65)
+    transform: scale(1.70)
+}
+
+.online-payment .first-qr {
+    transform: scale(2.75)
+}
+
+.payment-account p {
+    margin: 0
+}
+
+.upi-link {
+    color: var(--gold);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere
 }
 
 .online-payment label {
@@ -791,6 +922,48 @@ textarea:focus {
 
 .online-payment input[type="file"] {
     margin-top: 9px
+}
+
+@media (max-width: 560px) {
+    .ticker {
+        padding: 12px 6vw;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.45
+    }
+
+    .ticker-track {
+        display: block
+    }
+
+    .ticker-track span {
+        width: 100%;
+        overflow-wrap: anywhere
+    }
+
+    .payment-accounts {
+        grid-template-columns: 1fr;
+        gap: 18px
+    }
+
+    .payment-options {
+        padding: 14px
+    }
+
+    .payment-choice {
+        margin-right: 14px
+    }
+
+    .trip-guidelines ul {
+        padding-right: 14px;
+        padding-left: 30px;
+        overflow-wrap: anywhere
+    }
+
+    .trip-notes {
+        margin-right: 14px;
+        margin-left: 14px
+    }
 }
 
 .success-message {
@@ -1240,7 +1413,7 @@ body {
 }
 
 .hero-image {
-    background: linear-gradient(125deg, rgba(3, 8, 20, .55), rgba(8, 40, 62, .08)), url("pexels-suhashanjar-34271586.jpg") center/cover
+    background: linear-gradient(125deg, rgba(3, 8, 20, .55), rgba(8, 40, 62, .08)), url("kMl_ihs1fbZ3I3Nux2MXdcy9mcnY4hZsefY8jQCHSdnbv0z-Bdd69QMOXIUyVgeBdfE7__CKq7n31Y-1jxkw53X43QeflDYEUKmFAoKUv0h8RXEk-XxOM1gBhjfE-S6aUcoSDmQ0IroZH0jrPuyhu3qWNr5YmOC7homaU9htjnY.jpg") center/cover
 }
 
 .floating-stamp {
@@ -1266,7 +1439,7 @@ body {
 }
 
 .photo-one {
-    --destination-image: url("Avalabetta.jpg")
+    --destination-image: url("PjIcWy-kFp2VyKe7miOa6AfQ8YUg49d0cmJ9pnVLsZKkY8_qrQwzHJOMPymDwa_aBqwWOQXO0M6-JitwSBsB3BceygvMEM3g59KOpp5N2eyN0zJNMgDw-HdEJPrQ7Pr-JsTY46K7qjPjyukGelXh_-EZdT5kd7Gq87HgUSSbndeESIbqqcUEt0m--tdH0ML7.jpg")
 }
 
 .photo-two {
