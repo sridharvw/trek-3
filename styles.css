@@ -907,6 +907,13 @@ textarea:focus {
     margin: 0
 }
 
+.payment-links {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 10px
+}
+
 .upi-link {
     color: var(--gold);
     font-weight: 700;
