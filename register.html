@@ -70,16 +70,38 @@
           <div class="cash-message" id="cash-message" hidden>Cash payment selected. Your registration will be confirmed after the NSS team receives and verifies your payment.</div>
           <div class="online-payment" id="online-payment" hidden>
             <p>Scan either QR code or copy a UPI ID below, then paste it into PhonePe, Google Pay, or any other UPI app to pay ₹400.</p>
+            <div class="payment-platform-note">
+              <strong>Payment options:</strong> Android users can tap the Google Pay or PhonePe links to pay directly.
+              iOS users should copy the UPI ID into their payment app or scan the QR code.
+            </div>
+            <div class="android-upi-help" id="android-upi-help" hidden>
+              <strong>Android payment</strong>
+              <p>Android users can tap Google Pay or PhonePe to open the payment app directly.</p>
+            </div>
+            <div class="ios-upi-help" id="ios-upi-help" hidden>
+              <strong>iPhone / iPad payment</strong>
+              <p>iOS users cannot use click-and-pay links here. Copy one of these IDs and paste it into your preferred UPI app, or pay by scanning the QR code below.</p>
+              <div class="ios-upi-id"><code>sridharvw20@ybl</code><button class="upi-link copy-upi" type="button" data-upi="sridharvw20@ybl">Copy</button></div>
+              <div class="ios-upi-id"><code>nayan.vananjakar@okicici</code><button class="upi-link copy-upi" type="button" data-upi="nayan.vananjakar@okicici">Copy</button></div>
+            </div>
             <div class="payment-accounts">
               <div class="payment-account">
                 <div class="scanner-frame"><img class="first-qr" src="qrr.jpeg" alt="QR code for sridharvw20@ybl"></div>
                 <p>UPI ID: <strong>sridharvw20@ybl</strong></p>
                 <button class="upi-link copy-upi" type="button" data-upi="sridharvw20@ybl">Copy UPI ID</button>
+                <div class="payment-links android-direct-links" hidden>
+                  <a class="upi-link" href="intent://pay?pa=sridharvw20%40ybl&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end">Pay with Google Pay</a>
+                  <a class="upi-link" href="intent://pay?pa=sridharvw20%40ybl&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR#Intent;scheme=upi;package=com.phonepe.app;end">Pay with PhonePe</a>
+                </div>
               </div>
               <div class="payment-account">
                 <div class="scanner-frame"><img src="nayan2.jpeg" alt="QR code for nayan.vananjakar@okicici"></div>
                 <p>UPI ID: <strong>nayan.vananjakar@okicici</strong></p>
                 <button class="upi-link copy-upi" type="button" data-upi="nayan.vananjakar@okicici">Copy UPI ID</button>
+                <div class="payment-links android-direct-links" hidden>
+                  <a class="upi-link" href="intent://pay?pa=nayan.vananjakar%40okicici&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end">Pay with Google Pay</a>
+                  <a class="upi-link" href="intent://pay?pa=nayan.vananjakar%40okicici&amp;pn=NSS%20Trek&amp;am=400&amp;cu=INR#Intent;scheme=upi;package=com.phonepe.app;end">Pay with PhonePe</a>
+                </div>
               </div>
             </div>
             <label>Upload payment screenshot <b>*</b><input id="payment-proof" type="file" name="paymentProof" accept="image/*"></label>
@@ -118,7 +140,8 @@
         <div class="success-icon">✓</div>
         <p class="eyebrow"><span></span> YOU’RE ON THE LIST</p>
         <h2>See you,<br><em id="success-name">on the trail.</em></h2>
-        <p>Your registration is recorded as <strong id="success-number">Registration #—</strong> and is pending payment verification. The NSS team will confirm your place after checking the payment.</p><a
+        <p>Your registration is recorded as <strong id="success-number">Registration #—</strong> and is pending payment verification. The NSS team will confirm your place after checking the payment.</p>
+        <p class="success-screenshot-note"><strong>Confirmation reminders:</strong> Please take a screenshot of this confirmation page and keep it for your records.</p><a
           class="text-link" href="index.html">Return to trip details <span>↗</span></a>
       </div>
     </section>

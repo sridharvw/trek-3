@@ -875,6 +875,76 @@ textarea:focus {
     padding: 16px 14px
 }
 
+.ios-upi-help {
+    margin: 14px 0 18px;
+    padding: 14px;
+    border: 1px solid rgba(242, 173, 69, .45);
+    border-radius: 6px;
+    background: rgba(242, 173, 69, .08);
+    color: var(--mint);
+    font-size: 12px
+}
+
+.payment-platform-note {
+    margin: 12px 0 16px;
+    padding: 10px 12px;
+    border-left: 2px solid var(--gold);
+    background: rgba(242, 173, 69, .06);
+    color: var(--muted);
+    font-size: 12px
+}
+
+.payment-platform-note strong {
+    color: var(--cream)
+}
+
+.android-upi-help {
+    margin: 14px 0 18px;
+    padding: 14px;
+    border: 1px solid rgba(192, 214, 204, .2);
+    border-radius: 6px;
+    background: rgba(192, 214, 204, .06);
+    color: var(--mint);
+    font-size: 12px
+}
+
+.android-upi-help>strong {
+    color: var(--cream);
+    font-size: 12px
+}
+
+.android-upi-help p {
+    margin: 6px 0 11px
+}
+
+.android-upi-links {
+    display: grid;
+    gap: 8px
+}
+
+.ios-upi-help>strong {
+    color: var(--gold);
+    font-size: 12px
+}
+
+.ios-upi-help p {
+    margin: 6px 0 11px
+}
+
+.ios-upi-id {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-top: 1px solid rgba(192, 214, 204, .14)
+}
+
+.ios-upi-id code {
+    color: var(--cream);
+    overflow-wrap: anywhere
+}
+
 .payment-accounts {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -920,6 +990,12 @@ textarea:focus {
     gap: 14px;
     margin-top: 10px;
     flex-wrap: wrap
+}
+
+.android-direct-links:not([hidden]) {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px
 }
 
 .upi-link {
@@ -1025,6 +1101,18 @@ textarea:focus {
     color: var(--muted);
     max-width: 380px;
     margin: 25px 0 32px
+}
+
+.success-message .success-screenshot-note {
+    margin: -12px 0 32px;
+    padding: 12px 14px;
+    border-left: 2px solid var(--gold);
+    background: rgba(242, 173, 69, .08);
+    color: var(--mint)
+}
+
+.success-screenshot-note strong {
+    color: var(--gold)
 }
 
 @media(max-width:800px) {

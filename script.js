@@ -12,6 +12,26 @@ const guidelines = document.querySelector("#trip-guidelines");
 const guidelinesAccepted = document.querySelector("#guidelines-accepted");
 const submitButton = form?.querySelector(".submit-button");
 const copyUpiButtons = document.querySelectorAll(".copy-upi");
+const iosUpiHelp = document.querySelector("#ios-upi-help");
+const androidUpiHelp = document.querySelector("#android-upi-help");
+const androidDirectLinks = document.querySelectorAll(".android-direct-links");
+const isIosDevice = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isAndroidDevice = /Android/i.test(navigator.userAgent);
+
+if (iosUpiHelp && isIosDevice) {
+  iosUpiHelp.hidden = false;
+}
+
+if (androidUpiHelp && isAndroidDevice) {
+  androidUpiHelp.hidden = false;
+}
+
+if (isAndroidDevice) {
+  androidDirectLinks.forEach((links) => {
+    links.hidden = false;
+  });
+}
 
 async function copyUpiId(button) {
   const upiId = button.dataset.upi;
@@ -165,15 +185,11 @@ if (menuToggle && navigation) {
 const welcomeGuide = document.querySelector("#welcome-guide");
 const welcomeGuideClose = welcomeGuide?.querySelector(".welcome-guide-close");
 
-if (welcomeGuide && welcomeGuideClose && !localStorage.getItem("nssTrekWelcomeSeen")) {
+if (welcomeGuide && welcomeGuideClose) {
   welcomeGuide.showModal();
 
   welcomeGuideClose.addEventListener("click", () => {
-    localStorage.setItem("nssTrekWelcomeSeen", "true");
     welcomeGuide.close();
   });
 
-  welcomeGuide.addEventListener("cancel", () => {
-    localStorage.setItem("nssTrekWelcomeSeen", "true");
-  });
 }
